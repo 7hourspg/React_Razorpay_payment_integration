@@ -1,0 +1,128 @@
+.nav_Container {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: 0 2rem;
+   height: 80px;
+   background-color: #fff;
+   position: sticky;
+   top: 0;
+   z-index: 999;
+   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+
+   .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      flex: 1;
+
+      .logo_container {
+         font-family: "Courier New", Courier, monospace;
+
+         &:hover {
+            cursor: pointer;
+            color: #f1356d;
+         }
+         .logo_text {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #f1356d;
+         }
+         a {
+            text-decoration: none;
+         }
+      }
+
+      .nav_list {
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         list-style: none;
+
+         .nav_list_item {
+            margin: 0 1rem;
+            position: relative;
+            font-family: "Courier New", Courier, monospace;
+
+            .active {
+               color: #f1356d;
+            }
+            .inactive {
+               color: #000;
+            }
+
+            .nav_link {
+               text-decoration: none;
+               font-size: 1.1rem;
+               font-weight: 600;
+               transition: color 0.3s ease-in-out;
+
+               &:hover {
+                  color: #f1356d;
+               }
+            }
+         }
+      }
+      .cart_icon_container {
+         position: relative;
+         display: flex;
+         // background-color:black;
+         width: 3rem;
+         height: 3rem;
+         align-items: center;
+         justify-content: center;
+
+         &:hover {
+            .checkoutbx {
+               display: block;
+            }
+         }
+         .cart_icon {
+            font-size: 1.5rem;
+            color: #f1356d;
+            transition: color 0.3s ease-in-out;
+
+            &:hover {
+               color: red;
+               cursor: pointer;
+            }
+         }
+         .cart_number {
+            position: absolute;
+            top: 0;
+            right: 0;
+            background-color: black;
+            color: white;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 0.8rem;
+         }
+
+         .checkoutbx {
+            position: absolute;
+            left: -1rem;
+            top: 3rem;
+            display: none;
+
+            .checkoutbtn {
+               background-color: #f1356d;
+               color: white;
+               border: none;
+               padding: 0.5rem 1rem;
+               border-radius: 0 0 5px 5px;
+               font-size: 0.7rem;
+               transition: background-color 0.3s ease-in-out;
+
+               &:hover {
+                  cursor: pointer;
+               }
+            }
+         }
+      }
+   }
+}

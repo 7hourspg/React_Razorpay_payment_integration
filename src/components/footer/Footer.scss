@@ -1,0 +1,31 @@
+.foot_container {
+   background-color: #1a1a1a;
+   color: #fff;
+   padding: 20px 0;
+   text-align: center;
+   font-size: 14px;
+   font-weight: 300;
+   line-height: 1.5;
+
+   .foot_content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      .foot_content_left {
+         width: 100%;
+         @media (min-width: 768px) {
+            width: 50%;
+         }
+      }
+      .foot_content_right {
+         width: 100%;
+         @media (min-width: 768px) {
+            width: 50%;
+         }
+         &:hover {
+            cursor: pointer;
+         }
+      }
+   }
+}
