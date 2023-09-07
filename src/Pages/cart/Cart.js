@@ -8,7 +8,6 @@ function Cart() {
    const [toggle, setToggle] = React.useState(false);
 
    const toggleHandler = (item) => {
-      setItem(item);
       setToggle(!toggle);
    };
 
