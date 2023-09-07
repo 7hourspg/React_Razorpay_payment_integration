@@ -13,18 +13,38 @@ const fetchDataSlice = createSlice({
       status: "loading",
       error: null,
    },
-   extraReducers: {
-      [fetchDataReducer.pending]: (state, action) => {
-         state.status = "loading";
-      },
-      [fetchDataReducer.fulfilled]: (state, action) => {
-         state.status = "success";
-         state.data = action.payload;
-      },
-      [fetchDataReducer.rejected]: (state, action) => {
-         state.status = "failed";
-         state.error = action.error.message;
-      },
+
+   // OLD WAY TO WRITE THE BELOW CODE
+
+   // extraReducers: {
+   //    [fetchDataReducer.pending]: (state, action) => {
+   //       state.status = "loading";
+   //    },
+   //    [fetchDataReducer.fulfilled]: (state, action) => {
+   //       state.status = "success";
+   //       state.data = action.payload;
+   //    },
+   //    [fetchDataReducer.rejected]: (state, action) => {
+   //       state.status = "failed";
+   //       state.error = action.error.message;
+   //    },
+   // },
+
+   //  DIFFERENT WAY TO WRITE THE ABOVE CODE
+
+   extraReducers: (builder) => {
+      builder
+         .addCase(fetchDataReducer.pending, (state) => {
+            state.status = "loading";
+         })
+         .addCase(fetchDataReducer.fulfilled, (state, action) => {
+            state.status = "success";
+            state.data = action.payload;
+         })
+         .addCase(fetchDataReducer.rejected, (state, action) => {
+            state.status = "failed";
+            state.error = action.error.message;
+         });
    },
 });
 

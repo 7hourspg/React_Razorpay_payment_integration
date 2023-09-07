@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import {BiSolidCart} from "react-icons/bi";
 import {BsFillCartPlusFill, BsFillCartDashFill} from "react-icons/bs";
 import {IoBagCheckOutline} from "react-icons/io5";
@@ -14,6 +14,8 @@ import {
 } from "../../Redux/cartSlice";
 
 function Card({item, toggleHandler}) {
+   const [isInCart, setInCart] = useState(false);
+
    const location = useLocation();
    const dispatch = useDispatch();
 
@@ -100,13 +102,27 @@ function Card({item, toggleHandler}) {
                   <IoBagCheckOutline size={20} />
                   <span>Checkout now</span>
                </button>
+            ) : isInCart ? (
+               <button
+                  className="card_button"
+                  onClick={() => {
+                     dispatch(removeFromCart(item));
+                     setInCart(false);
+                  }}
+               >
+                  <BiSolidCart size={30} />
+                  <span>Remove from cart</span>
+               </button>
             ) : (
                <button
                   className="card_button"
-                  onClick={() => dispatch(addToCart(item))}
+                  onClick={() => {
+                     dispatch(addToCart(item));
+                     setInCart(true);
+                  }}
                >
                   <BiSolidCart size={30} />
-                  <span>Add to Cart</span>
+                  <span>Add to cart</span>
                </button>
             )}
          </div>

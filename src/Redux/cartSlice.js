@@ -16,6 +16,7 @@ export const cartSlice = createSlice({
             state.push({
                ...action.payload,
                quantity: 1,
+               isInCart: true,
             });
          }
       },

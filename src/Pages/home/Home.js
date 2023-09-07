@@ -9,9 +9,10 @@ export default function Home() {
    const fetchData = useSelector((state) => state.fetchDataReducer);
    const dispatch = useDispatch();
 
+   console.log(fetchData.data);
+
    useEffect(() => {
       dispatch(fetchDataReducer());
-      console.log("running");
    }, [dispatch]);
 
    if (fetchData.status === "loading") {
