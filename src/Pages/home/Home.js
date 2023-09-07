@@ -1,34 +1,27 @@
 import React, {useEffect} from "react";
 import "./Home.scss";
 import {useSelector, useDispatch} from "react-redux";
-import {decrement, increment} from "../../Redux/createSlice";
-import {Link} from "react-router-dom";
 import Loading from "../../components/loading/Loading";
-import {Data} from "../../components/Data";
 import Card from "../../components/card/Card";
+import {fetchDataReducer} from "../../Redux/services/fetchDataSlice";
 
 export default function Home() {
-   const [data, setData] = React.useState([]);
-
-   const counter = useSelector((state) => state.counterReducer.value);
-   console.log(counter);
+   const fetchData = useSelector((state) => state.fetchDataReducer);
    const dispatch = useDispatch();
 
-   const fetchData = async () => {
-      fetch("https://fakestoreapi.com/products")
-         .then((res) => res.json())
-         .then((json) => setData(json));
-   };
-
    useEffect(() => {
-      // fetchData();
-   }, []);
+      dispatch(fetchDataReducer());
+      console.log("running");
+   }, [dispatch]);
 
-   console.log(Data);
+   if (fetchData.status === "loading") {
+      return <Loading />;
+   }
 
    return (
       <div className="home_container">
-         {Data.map((item) => {
+         {fetchData.status === "failed" && <h1>{fetchData.error}</h1>}
+         {fetchData.data.map((item) => {
             return <Card item={item} key={item.id} />;
          })}
       </div>

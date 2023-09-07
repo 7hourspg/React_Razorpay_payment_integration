@@ -1,8 +1,7 @@
 import React from "react";
 import {TailSpin} from "react-loader-spinner";
 
-function Loading({label}) {
-   console.log(label);
+function Loading() {
    return (
       <>
          <TailSpin
@@ -19,7 +18,6 @@ function Loading({label}) {
             }}
             visible={true}
          />
-         <h1>{label}</h1>
       </>
    );
 }

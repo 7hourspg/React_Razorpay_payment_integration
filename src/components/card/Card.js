@@ -13,9 +13,10 @@ import {
    decrementQuantity,
 } from "../../Redux/cartSlice";
 
-function Card({item}) {
+function Card({item, toggleHandler}) {
    const location = useLocation();
    const dispatch = useDispatch();
+
    const titleCateString = (str) => {
       if (str.length > 20) {
          return str.slice(0, 20) + "...";
@@ -40,7 +41,9 @@ function Card({item}) {
                <>
                   <p className="card_price">
                      <small>$</small>
-                     <strong>{item.price * item?.quantity}</strong>
+                     <strong>
+                        {item.totalPrice ? item.totalPrice : item.price}
+                     </strong>
                   </p>
                   <div
                      style={{
@@ -90,7 +93,10 @@ function Card({item}) {
          </div>
          <div className="button_container">
             {location.pathname === "/cart" ? (
-               <button className="card_button">
+               <button
+                  onClick={() => toggleHandler(item)}
+                  className="card_button"
+               >
                   <IoBagCheckOutline size={20} />
                   <span>Checkout now</span>
                </button>

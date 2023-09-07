@@ -52,7 +52,7 @@ function Navbar() {
             </ul>
             <div
                style={
-                  location.pathname == "/cart"
+                  location.pathname === "/cart"
                      ? {visibility: "hidden"}
                      : {visibility: "visible"}
                }

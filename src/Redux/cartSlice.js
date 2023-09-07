@@ -46,7 +46,8 @@ export const cartSlice = createSlice({
          if (itemIndex !== -1) {
             if (state[itemIndex].quantity > 1) {
                state[itemIndex].quantity -= 1;
-               state[itemIndex].totalPrice = state[itemIndex].price * state[itemIndex]?.quantity;
+               state[itemIndex].totalPrice =
+                  state[itemIndex].price * state[itemIndex]?.quantity;
             }
          }
       },
