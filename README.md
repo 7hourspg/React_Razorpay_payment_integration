@@ -1,6 +1,3 @@
-<img src="./src/screenshots/logo.png" align="right" width="100" height="100"/>
-
-
 # Shoper -A Simple Shopping App
 
 ## Description
@@ -24,12 +21,11 @@ To install this project, clone the repository and use npm to install the depende
 
 ## Screenshots
 
-![App Screenshot](./src/screenshots/landingpage.png)
---------------------
+## ![App Screenshot](./src/screenshots/landingpage.png)
+
 ![App Screenshot](./src/screenshots/cartpage.png)
 
-
---------------------
+---
 
 ## Tech Stack
 
