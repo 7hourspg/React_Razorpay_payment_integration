@@ -13,7 +13,7 @@ import {
    decrementQuantity,
 } from "../../Redux/services/cartSlice";
 
-function Card({item, toggleHandler}) {
+function Card({item}) {
    const [isInCart, setInCart] = useState(false);
 
    const location = useLocation();
@@ -95,10 +95,7 @@ function Card({item, toggleHandler}) {
          </div>
          <div className="button_container">
             {location.pathname === "/cart" ? (
-               <button
-                  onClick={() => toggleHandler(item)}
-                  className="card_button"
-               >
+               <button className="card_button">
                   <IoBagCheckOutline size={20} />
                   <span>Checkout now</span>
                </button>
