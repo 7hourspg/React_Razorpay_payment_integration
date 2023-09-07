@@ -2,8 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.scss";
 import App from "./App";
-import reportWebVitals from "./reportWebVitals";
-import {store} from "./Redux/store";
+import {store} from "./Redux/services/store";
 import {Provider} from "react-redux";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
@@ -15,5 +14,3 @@ root.render(
       </Provider>
    </React.StrictMode>
 );
-
-reportWebVitals();

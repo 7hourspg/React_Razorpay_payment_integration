@@ -11,7 +11,7 @@ import {
    removeFromCart,
    incrementQuantity,
    decrementQuantity,
-} from "../../Redux/cartSlice";
+} from "../../Redux/services/cartSlice";
 
 function Card({item, toggleHandler}) {
    const [isInCart, setInCart] = useState(false);

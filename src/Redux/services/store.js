@@ -1,6 +1,6 @@
 import {configureStore} from "@reduxjs/toolkit";
 import cartReducer from "./cartSlice";
-import fetchDataReducer from "./services/fetchDataSlice";
+import fetchDataReducer from "./fetchDataSlice";
 
 export const store = configureStore({
    reducer: {
