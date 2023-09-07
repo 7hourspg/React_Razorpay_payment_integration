@@ -10,8 +10,9 @@ To install this project, clone the repository and use npm to install the depende
 
 ```bash
   git clone
-     cd shoper
-     npm install
+  cd Shoper_app
+  npm install
+  yarn start or npm start
 ```
 
 ## Demo
@@ -30,5 +31,4 @@ To install this project, clone the repository and use npm to install the depende
 
 ## Authors
 
-- Made with 💖 [@7hourspg](https://github.com/7hourspg)
-
+-  Made with 💖 [@7hourspg](https://github.com/7hourspg)
