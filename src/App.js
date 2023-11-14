@@ -9,9 +9,9 @@ import About from "./Pages/about/About";
 import Contact from "./Pages/contact/Contact";
 import "./App.scss";
 import Cart from "./Pages/cart/Cart";
+import Success from "./Pages/success/Success";
 
 function App() {
-   // Routes
 
    const Layout = () => {
       return (
@@ -45,6 +45,10 @@ function App() {
             {
                path: "/cart",
                element: <Cart />,
+            },
+            {
+               path: "/success",
+               element: <Success />,
             },
          ],
       },
